@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 120 17% 5%; /* #0a0e0a */
+    --foreground: 120 10% 85%; /* Light contrasting color */
+    --card: 120 17% 8%; /* Slightly lighter than background */
+    --card-foreground: 120 10% 85%;
+    --popover: 120 17% 8%;
+    --popover-foreground: 120 10% 85%;
+    --primary: 120 65% 11%; /* #1a5e1a */
+    --primary-foreground: 120 10% 85%;
+    --secondary: 0 56% 18%; /* Darker variant of accent for secondary elements */
+    --secondary-foreground: 0 10% 85%;
+    --muted: 120 10% 15%;
+    --muted-foreground: 120 10% 60%;
+    --accent: 0 56% 23%; /* #5e1a1a */
+    --accent-foreground: 0 10% 85%;
+    --destructive: 0 62.8% 30.6%; /* Default destructive, or map accent here if needed */
+    --destructive-foreground: 0 0% 98%;
+    --border: 120 10% 20%;
+    --input: 120 10% 20%;
+    --ring: 120 65% 11%; /* Same as primary */
+    --chart-1: 120 70% 50%;
+    --chart-2: 0 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.5rem;
+
+    /* Sidebar variables adapted for the dark theme */
+    --sidebar-background: 120 17% 7%; /* Slightly different from main background */
+    --sidebar-foreground: 120 10% 80%;
+    --sidebar-primary: 120 65% 15%; /* Slightly brighter primary for sidebar */
+    --sidebar-primary-foreground: 120 10% 90%;
+    --sidebar-accent: 0 56% 28%; /* Slightly brighter accent for sidebar */
+    --sidebar-accent-foreground: 0 10% 90%;
+    --sidebar-border: 120 10% 25%;
+    --sidebar-ring: 120 65% 15%;
+  }
+
+  /* Apply dark theme variables directly, removing .dark class necessity for this app */
+  .dark {
+    --background: 120 17% 5%;
+    --foreground: 120 10% 85%;
+    --card: 120 17% 8%;
+    --card-foreground: 120 10% 85%;
+    --popover: 120 17% 8%;
+    --popover-foreground: 120 10% 85%;
+    --primary: 120 65% 11%;
+    --primary-foreground: 120 10% 85%;
+    --secondary: 0 56% 18%;
+    --secondary-foreground: 0 10% 85%;
+    --muted: 120 10% 15%;
+    --muted-foreground: 120 10% 60%;
+    --accent: 0 56% 23%;
+    --accent-foreground: 0 10% 85%;
+    --destructive: 0 70% 40%; /* A bit brighter red for dark mode */
+    --destructive-foreground: 0 0% 98%;
+    --border: 120 10% 20%;
+    --input: 120 10% 20%;
+    --ring: 120 65% 11%;
+    --chart-1: 120 70% 50%;
+    --chart-2: 0 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+     /* Sidebar variables adapted for the dark theme */
+    --sidebar-background: 120 17% 7%; 
+    --sidebar-foreground: 120 10% 80%;
+    --sidebar-primary: 120 65% 15%; 
+    --sidebar-primary-foreground: 120 10% 90%;
+    --sidebar-accent: 0 56% 28%; 
+    --sidebar-accent-foreground: 0 10% 90%;
+    --sidebar-border: 120 10% 25%;
+    --sidebar-ring: 120 65% 15%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles from original HTML, adapted for Tailwind */
+.animal-info {
+  @apply bg-card p-4 rounded-lg shadow-md my-4 flex items-center gap-3 text-sm text-card-foreground;
+}
+.animal-info i { /* This will be replaced by Lucide icons, but keeping for structure */
+  @apply text-primary text-2xl;
+}
+
+.payment-table {
+  @apply w-full my-4 border-collapse;
+}
+.payment-table th, .payment-table td {
+  @apply border border-border p-2 text-left;
+}
+.payment-table th {
+  @apply bg-muted font-semibold;
+}
+.payment-table tfoot td {
+  @apply font-bold bg-muted;
+}
+.payment-controls {
+  @apply mt-4 space-y-4;
+}
+.payment-type {
+  @apply flex items-center gap-2;
+}
+.download-controls {
+  @apply mt-2;
+}
+.pesaje-container {
+  @apply space-y-1;
+}
+.pesaje-row {
+  @apply flex items-center gap-1;
+}
+.pesaje-label {
+  @apply text-xs w-10;
+}
+.day-sum {
+  @apply font-semibold mt-1 text-right;
+}
+input.locked {
+  @apply bg-muted/50 cursor-not-allowed;
+}
+.unlock-btn {
+  @apply ml-1 cursor-pointer text-accent;
+}
